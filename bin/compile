@@ -1,0 +1,11 @@
+#!/bin/bash
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Fetching GeoLite City"
+
+cd $1
+
+curl -L --silent http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gzip -d -c > vendor/GeoLiteCity.dat
