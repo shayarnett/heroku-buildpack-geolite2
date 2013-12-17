@@ -8,11 +8,10 @@ echo "-----> Fetching GeoLiteCity IPv4"
 
 cd $1
 
-echo `ls -alh`
-echo `ls -alh /`
+mkdir -p vendor
 
-curl -L --silent http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gzip -d -c > /vendor/GeoLiteCity.dat
+curl -L --silent http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gzip -d -c > vendor/GeoLiteCity.dat
 
 echo "-----> Fetching GeoLiteCity IPv6"
 
-curl -L --silent https://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz | gzip -d -c > /vendor/GeoLiteCityv6.dat
+curl -L --silent https://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz | gzip -d -c > vendor/GeoLiteCityv6.dat
