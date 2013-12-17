@@ -8,6 +8,9 @@ echo "-----> Fetching GeoLiteCity IPv4"
 
 cd $1
 
+echo `ls -alh`
+echo `ls -alh /`
+
 curl -L --silent http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz | gzip -d -c > /vendor/GeoLiteCity.dat
 
 echo "-----> Fetching GeoLiteCity IPv6"
