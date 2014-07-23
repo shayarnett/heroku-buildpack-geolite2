@@ -1,4 +1,4 @@
 heroku-buildpack-geolite
 ========================
 
-Fetch the latest Geolite City into your vendor directory
+Fetch the latest Geolite City data into your vendor directory.
