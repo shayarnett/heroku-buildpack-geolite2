@@ -9,5 +9,5 @@ mkdir -p vendor
 
 MAXMIND=https://geolite.maxmind.com/download/geoip/database
 
-echo "-----> Fetching GeoLiteCity IPv4"
-curl -L --silent $MAXMIND/GeoLite2-City.mmdb.gz | gzip -d -c > vendor/GeoLiteCity.dat
+echo "-----> Fetching GeoLiteCity2 IPv4"
+curl -L --silent $MAXMIND/GeoLite2-City.mmdb.gz | gzip -d -c > vendor/maxmind.mmdb
