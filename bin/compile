@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ENV_DIR=${3:-}
+
 indent() {
   sed -u 's/^/       /'
 }
@@ -7,7 +9,7 @@ indent() {
 cd $1
 mkdir -p vendor
 
-MAXMIND=https://geolite.maxmind.com/download/geoip/database
+maxmind="https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${MAXMIND_LICENSE_KEY:-$(cat $ENV_DIR/MAXMIND_LICENSE_KEY)}&suffix=tar.gz"
 
 echo "-----> Fetching GeoLiteCity2 IPv4"
-curl -L --silent $MAXMIND/GeoLite2-City.mmdb.gz | gzip -d -c > vendor/maxmind.mmdb
+curl -L --silent "${maxmind}" | tar xvzf - -C vendor --strip-components=1
